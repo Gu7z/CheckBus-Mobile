@@ -20,6 +20,6 @@ Caso nao tenha um path SDK no seu sistema, adicione o local no arquivo /android/
 * [React-Native-Geolocation](https://github.com/react-native-community/react-native-geolocation) - Biblioteca de Localização
 * [React-Native-Maps](https://github.com/react-native-community/react-native-maps) - Biblioteca de Mapa
 
-## Authors
+## Autores
 
 * **Gustavo Ferri** - *Initial work* - [Gu7z](https://github.com/Gu7z)

@@ -14,6 +14,7 @@ import {
 
 import MapView, {Marker} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 function App(){
 
@@ -78,7 +79,6 @@ function App(){
   return (
     <>
         <View style = {{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}} >
-          
           <View style={{minWidth: 150, margin: 10}}>
             <Button title="Ativar" onPress={startWatch} />
           </View>
@@ -102,7 +102,9 @@ function App(){
                 <Marker
                   coordinate={location}
                   title="AAAAAAAaaa"
-                />
+                >
+                  <Icon name="bus" size={25} color="blue" />
+                </Marker>
               )
               :
               (
