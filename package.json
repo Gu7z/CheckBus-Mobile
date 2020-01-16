@@ -14,10 +14,12 @@
     "@material-ui/icons": "^4.5.1",
     "@react-native-community/cli-tools": "^3.0.0",
     "@react-native-community/geolocation": "^2.0.2",
+    "@ui-kitten/components": "^4.3.2",
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "react-native-maps": "0.26.1",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native-maps": "^0.26.1",
+    "react-native-vector-icons": "^6.6.0",
+    "socket.io-client": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

@@ -9,12 +9,21 @@ import {
   PermissionsAndroid,
   Alert,
   Button,
-  BackHandler
+  BackHandler,
+  Dimensions
 } from 'react-native';
+
+import Map from './components/mapa'
 
 import MapView, {Marker} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation'
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import socketIOClient from 'socket.io-client'
+
+endPoint = 'http://192.168.1.14:3001'
+
+const io = socketIOClient(endPoint)
 
 function App(){
 
@@ -35,6 +44,9 @@ function App(){
           }
         }
       )
+      io.on('teste', ()=>{
+        console.log('teste')
+      })
     }, []
   )
 
@@ -77,7 +89,7 @@ function App(){
   }
 
   return (
-    <>
+    <View>
         <View style = {{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}} >
           <View style={{minWidth: 150, margin: 10}}>
             <Button title="Ativar" onPress={startWatch} />
@@ -87,41 +99,19 @@ function App(){
           </View>
         </View>
 
-        <View style={styles.container} >
-          <MapView
-            style={styles.map}
-            initialRegion={{
-              latitude: -19.0123974,
-              longitude: -57.6018038,
-              latitudeDelta: 0.0121,
-              longitudeDelta: 0.0121,
-            }}
-          >
-            {location ? 
-              (
-                <Marker
-                  coordinate={location}
-                  title="AAAAAAAaaa"
-                >
-                  <Icon name="bus" size={25} color="blue" />
-                </Marker>
-              )
-              :
-              (
-                null
-              )
-            }
-          </MapView>
+        <View style={styles.map} >
+          <Map styles={styles} location={location} Icon={Icon} ></Map>
         </View>
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
+  map:{
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height
   },
-  map: {
+  mapBox: {
     flex:1
   },
 });
